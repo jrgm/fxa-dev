@@ -1,0 +1,22 @@
+---
+region: us-west-2
+subdomain: jrgm.dev
+hosted_zone: lcip.org
+ssl_certificate_name: exp20170412_wildcard_dev_lcip.org
+rds_password: ab4b6475c68a8734
+
+owner: jrgm@mozilla.com
+reaper_spare_me: "true"
+
+# For demonstation, use a larger instance type, and larger disk. For most
+# uses, a t2.small is sufficient. However, the default 8GB gets a little
+# cramped after a while. Definitely always use a t2 instance type since it's a
+# good fit for the use case of an fxa-dev box (often idle, sometimes busy).
+ec2_instance_type: t2.medium
+ec2_volume_size: 16
+
+content_git_repo: https://github.com/jrgm/fxa-content-server.git
+content_git_version: useTeamCityReporter
+
+fxadev_git_repo: https://github.com/jrgm/fxa-dev.git
+fxadev_git_version: aws-env-jrgm
